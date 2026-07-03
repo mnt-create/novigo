@@ -1,84 +1,113 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BedDouble, Car, ChevronDown, Plane } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import { SearchBox } from "@/components/shared/search-box";
-import { heroContent } from "@/features/marketing/data/homepage";
+import { Container } from "@/components/shared/container";
+import { Button } from "@/components/ui/button";
 import { routes } from "@/constants/routes";
+import { heroContent } from "@/features/marketing/data/homepage";
 import { cn } from "@/lib/utils";
-
-const heroTabs = [
-  { id: "stay", label: "Konaklama", icon: BedDouble },
-  { id: "flight", label: "Uçak", icon: Plane },
-  { id: "car", label: "Araç", icon: Car },
-] as const;
 
 export function HomeHero() {
   const router = useRouter();
+  const [primary, ...secondaryImages] = heroContent.collageImages;
 
   return (
-    <section className="relative min-h-[520px] overflow-hidden lg:min-h-[580px]">
-      <Image
-        src={heroContent.imageUrl}
-        alt=""
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/50 via-brand-navy/30 to-brand-navy/70" />
+    <section className="relative min-h-[640px] overflow-hidden lg:min-h-[720px]">
+      <div className="absolute inset-0 lg:hidden">
+        <Image
+          src={primary.url}
+          alt={primary.alt}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
 
-      <div className="relative mx-auto flex w-full max-w-[90rem] flex-col px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
-        <div className="max-w-3xl space-y-4 text-white">
-          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+      <div className="absolute inset-0 hidden grid-cols-12 grid-rows-5 lg:grid">
+        <div className="relative col-span-7 row-span-5">
+          <Image
+            src={primary.url}
+            alt={primary.alt}
+            fill
+            priority
+            className="object-cover"
+            sizes="58vw"
+          />
+        </div>
+        {secondaryImages.map((image, index) => (
+          <div key={image.url} className={collageCellClass(index)}>
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="21vw"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/75 to-brand-navy/55" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-brand-navy/30" />
+
+      <Container
+        size="wide"
+        className="relative flex min-h-[640px] flex-col justify-center py-16 lg:min-h-[720px] lg:py-20"
+      >
+        <div className="max-w-3xl space-y-5 text-white">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/70">
+            AI-powered hotel booking
+          </p>
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
             {heroContent.title}
           </h1>
-          <p className="max-w-2xl text-base text-white/85 sm:text-lg">{heroContent.subtitle}</p>
+          <p className="max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+            {heroContent.subtitle}
+          </p>
         </div>
 
-        <div className="mt-8 w-full max-w-5xl">
-          <div className="mb-3 flex gap-2">
-            {heroTabs.map((tab) => {
-              const Icon = tab.icon;
-              const isActive = tab.id === "stay";
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  disabled={tab.id !== "stay"}
-                  className={cn(
-                    "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                    isActive
-                      ? "bg-white text-brand-navy"
-                      : "bg-white/15 text-white/70 backdrop-blur-sm",
-                    tab.id !== "stay" && "cursor-not-allowed opacity-60",
-                  )}
-                >
-                  <Icon className="size-4" />
-                  <span className="hidden sm:inline">{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
-
+        <div className="mt-10 w-full max-w-5xl">
           <SearchBox
             mode="traditional"
+            variant="booking"
             showModeToggle={false}
             onSubmit={() => router.push(routes.search)}
-            className="border-0 shadow-2xl shadow-black/15"
+            className="border border-white/10 bg-card/95 backdrop-blur-sm"
           />
 
-          <button
-            type="button"
-            className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-white/90 hover:text-white"
-          >
-            Esnek arama
-            <ChevronDown className="size-4" />
-          </button>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/15 hover:text-white"
+              asChild
+            >
+              <Link href={routes.ai}>
+                <Sparkles className="size-4" />
+                {heroContent.aiCta}
+              </Link>
+            </Button>
+            <p className="text-sm text-white/70">
+              Prefer classic search? Use the form above — AI is here when you need inspiration.
+            </p>
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
+  );
+}
+
+function collageCellClass(index: number) {
+  return cn(
+    "relative col-span-5",
+    index === 0 && "row-span-2",
+    index === 1 && "row-span-2 row-start-3",
+    index === 2 && "row-span-1 row-start-5",
   );
 }

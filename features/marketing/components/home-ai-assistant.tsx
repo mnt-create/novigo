@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Bot, Check, Send, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowRight, Bot, Check, Sparkles } from "lucide-react";
 
+import { Container } from "@/components/shared/container";
+import { MotionReveal } from "@/components/shared/motion-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { aiAssistantContent } from "@/features/marketing/data/homepage";
+import { spacing, typography } from "@/config/design-tokens";
 import { routes } from "@/constants/routes";
-import { useRouter } from "next/navigation";
+import { aiAssistantContent } from "@/features/marketing/data/homepage";
 
 export function HomeAiAssistant() {
   const router = useRouter();
@@ -21,80 +25,97 @@ export function HomeAiAssistant() {
   }
 
   return (
-    <section className="bg-surface-subtle py-16 sm:py-20">
-      <div className="mx-auto grid w-full max-w-[90rem] gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto_280px] lg:px-8 lg:gap-10">
-        <div className="rounded-2xl border border-border/60 bg-white p-6 shadow-sm sm:p-8">
-          <div className="mb-6 flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
-              <Sparkles className="size-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h2 className="text-xl font-semibold">{aiAssistantContent.title}</h2>
-                {aiAssistantContent.beta ? (
-                  <Badge className="bg-violet-100 text-violet-700 hover:bg-violet-100">Beta</Badge>
-                ) : null}
+    <section className={spacing.section}>
+      <Container size="wide">
+        <div className="overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm ring-1 ring-foreground/5">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-6 p-6 sm:p-8 lg:p-10">
+              <div className="space-y-3">
+                <Badge variant="secondary" className="rounded-full px-3 py-1">
+                  {aiAssistantContent.eyebrow}
+                </Badge>
+                <h2 className={typography.h2}>{aiAssistantContent.title}</h2>
+                <p className="max-w-xl text-muted-foreground">{aiAssistantContent.description}</p>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Seyahat kararlarınızı AI ile hızlandırın
-              </p>
-            </div>
-          </div>
 
-          <div className="mb-4 flex flex-wrap gap-2">
-            {aiAssistantContent.suggestions.map((suggestion) => (
-              <Button
-                key={suggestion}
-                type="button"
-                variant="outline"
-                size="sm"
-                className="h-auto whitespace-normal rounded-full px-3 py-1.5 text-left text-xs font-normal"
-                onClick={() => handleSubmit(suggestion)}
+              <div className="flex flex-wrap gap-2">
+                {aiAssistantContent.suggestions.map((suggestion) => (
+                  <Button
+                    key={suggestion}
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="h-auto whitespace-normal rounded-full px-3 py-1.5 text-left text-xs font-normal"
+                    onClick={() => handleSubmit(suggestion)}
+                  >
+                    {suggestion}
+                  </Button>
+                ))}
+              </div>
+
+              <form
+                className="flex flex-col gap-3 sm:flex-row"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  handleSubmit(prompt);
+                }}
               >
-                {suggestion}
+                <Input
+                  inputSize="lg"
+                  value={prompt}
+                  onChange={(event) => setPrompt(event.target.value)}
+                  placeholder={aiAssistantContent.placeholder}
+                  aria-label="Describe your trip to Novigo AI"
+                  className="flex-1"
+                />
+                <Button type="submit" size="lg" className="bg-brand-blue hover:bg-brand-blue/90">
+                  <Sparkles className="size-4" />
+                  Ask Novigo AI
+                </Button>
+              </form>
+
+              <Button variant="ghost" className="px-0 text-brand-blue hover:bg-transparent hover:text-brand-blue/90" asChild>
+                <Link href={routes.ai}>
+                  Open full AI assistant
+                  <ArrowRight className="size-4" />
+                </Link>
               </Button>
-            ))}
+            </div>
+
+            <MotionReveal className="relative border-t border-border/60 bg-muted/30 p-6 sm:p-8 lg:border-t-0 lg:border-l lg:p-10">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
+                  <Bot className="size-6" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="font-semibold">Novigo AI preview</p>
+                  <p className="text-sm text-muted-foreground">
+                    A smarter layer on top of hotel search
+                  </p>
+                </div>
+              </div>
+
+              <ul className="space-y-4">
+                {aiAssistantContent.capabilities.map((capability) => (
+                  <li key={capability} className="flex items-start gap-3 text-sm">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
+                      <Check className="size-3" />
+                    </span>
+                    <span className="text-muted-foreground">{capability}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 rounded-2xl border border-border/60 bg-background p-4 text-sm">
+                <p className="font-medium">Example</p>
+                <p className="mt-2 text-muted-foreground">
+                  &ldquo;Find a design-forward hotel in Rome near the Colosseum for 3 nights in October.&rdquo;
+                </p>
+              </div>
+            </MotionReveal>
           </div>
-
-          <form
-            className="flex gap-2"
-            onSubmit={(event) => {
-              event.preventDefault();
-              handleSubmit(prompt);
-            }}
-          >
-            <Input
-              inputSize="lg"
-              value={prompt}
-              onChange={(event) => setPrompt(event.target.value)}
-              placeholder={aiAssistantContent.placeholder}
-              aria-label="AI asistan mesajı"
-              className="flex-1"
-            />
-            <Button type="submit" size="lg" className="bg-brand-blue hover:bg-brand-blue/90">
-              <Send className="size-4" />
-              <span className="sr-only">Gönder</span>
-            </Button>
-          </form>
         </div>
-
-        <div className="hidden items-end justify-center lg:flex">
-          <div className="flex size-44 items-center justify-center rounded-full bg-brand-blue/10">
-            <Bot className="size-24 text-brand-blue/80" strokeWidth={1.25} />
-          </div>
-        </div>
-
-        <ul className="space-y-4 self-center">
-          {aiAssistantContent.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-3 text-sm">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
-                <Check className="size-3" />
-              </span>
-              <span className="text-muted-foreground">{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      </Container>
     </section>
   );
 }
