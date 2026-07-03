@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "NOVIGO",
-  tagline: "Travel Smarter with AI",
+  tagline: "AI ile daha akıllı seyahat et",
   description:
-    "Discover and book hotels worldwide with intelligent search, real-time availability, and personalized AI recommendations.",
+    "Akıllı arama, anlık müsaitlik ve kişiselleştirilmiş AI önerileriyle dünya genelinde otelleri keşfet ve rezerve et.",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   links: {
     support: "mailto:support@novigo.com",

@@ -10,7 +10,7 @@ import {
 import { routes } from "@/constants/routes";
 
 export type NavItem = {
-  label: string;
+  id: "accommodation" | "flights" | "carRental" | "transfer" | "events";
   href: string;
   icon: LucideIcon;
   active?: boolean;
@@ -18,48 +18,48 @@ export type NavItem = {
 };
 
 export const mainNavItems: NavItem[] = [
-  { label: "Konaklama", href: routes.search, icon: BedDouble, active: true, phase: 1 },
-  { label: "Uçak Bileti", href: routes.search, icon: Plane, phase: 2 },
-  { label: "Araç Kiralama", href: routes.search, icon: Car, phase: 2 },
-  { label: "Transfer", href: routes.search, icon: Bus, phase: 2 },
-  { label: "Etkinlikler", href: routes.search, icon: PartyPopper, phase: 2 },
+  { id: "accommodation", href: routes.search, icon: BedDouble, active: true, phase: 1 },
+  { id: "flights", href: routes.search, icon: Plane, phase: 2 },
+  { id: "carRental", href: routes.search, icon: Car, phase: 2 },
+  { id: "transfer", href: routes.search, icon: Bus, phase: 2 },
+  { id: "events", href: routes.search, icon: PartyPopper, phase: 2 },
 ];
 
-export const footerColumns = {
+export const footerColumnIds = {
   explore: {
-    title: "Keşfet",
+    id: "explore",
     links: [
-      { label: "Oteller", href: routes.hotels },
-      { label: "Destinasyonlar", href: routes.destinations },
-      { label: "Kampanyalar", href: routes.offers },
-      { label: "AI Asistan", href: routes.ai },
+      { id: "hotels", href: routes.hotels },
+      { id: "destinations", href: routes.destinations },
+      { id: "offers", href: routes.offers },
+      { id: "aiAssistant", href: routes.ai },
     ],
   },
   company: {
-    title: "Şirket",
+    id: "company",
     links: [
-      { label: "Hakkımızda", href: routes.about },
-      { label: "Kariyer", href: routes.about },
-      { label: "Basın", href: routes.about },
-      { label: "İş ortakları", href: routes.contact },
+      { id: "about", href: routes.about },
+      { id: "careers", href: routes.about },
+      { id: "press", href: routes.about },
+      { id: "partners", href: routes.contact },
     ],
   },
   support: {
-    title: "Destek",
+    id: "support",
     links: [
-      { label: "Yardım Merkezi", href: routes.help },
-      { label: "İletişim", href: routes.contact },
-      { label: "Rezervasyonlarım", href: routes.bookings },
-      { label: "SSS", href: routes.help },
+      { id: "helpCenter", href: routes.help },
+      { id: "contact", href: routes.contact },
+      { id: "myBookings", href: routes.bookings },
+      { id: "faq", href: routes.help },
     ],
   },
   legal: {
-    title: "Yasal",
+    id: "legal",
     links: [
-      { label: "Gizlilik", href: "/privacy" },
-      { label: "Kullanım Koşulları", href: "/terms" },
-      { label: "Çerez Politikası", href: "/privacy" },
-      { label: "KVKK", href: "/privacy" },
+      { id: "privacy", href: "/privacy" },
+      { id: "terms", href: "/terms" },
+      { id: "cookies", href: "/privacy" },
+      { id: "kvkk", href: "/privacy" },
     ],
   },
 } as const;

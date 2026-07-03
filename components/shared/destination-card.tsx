@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { Badge } from "@/components/ui/badge";
 import { shadows } from "@/config/design-tokens";
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 export type DestinationCardData = {
@@ -19,8 +20,17 @@ type DestinationCardProps = {
   className?: string;
 };
 
-function DestinationCard({ destination, className }: DestinationCardProps) {
+const numberLocales = {
+  en: "en-US",
+  es: "es-ES",
+  tr: "tr-TR",
+} as const;
+
+async function DestinationCard({ destination, className }: DestinationCardProps) {
+  const t = await getTranslations("DestinationCard");
+  const locale = await getLocale();
   const href = destination.href ?? `/destinations/${destination.slug}`;
+  const numberLocale = numberLocales[locale as keyof typeof numberLocales] ?? "en-US";
 
   return (
     <Link
@@ -45,7 +55,9 @@ function DestinationCard({ destination, className }: DestinationCardProps) {
         <h3 className="text-xl font-semibold tracking-tight">{destination.name}</h3>
         {destination.hotelCount !== undefined ? (
           <Badge variant="secondary" className="bg-white/15 text-white hover:bg-white/20">
-            {destination.hotelCount.toLocaleString("tr-TR")} tesis
+            {t("properties", {
+              count: destination.hotelCount.toLocaleString(numberLocale),
+            })}
           </Badge>
         ) : null}
       </div>

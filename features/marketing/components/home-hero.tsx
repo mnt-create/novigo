@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Sparkles } from "lucide-react";
 
 import { SearchBox } from "@/components/shared/search-box";
@@ -10,9 +9,11 @@ import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/constants/routes";
 import { heroContent } from "@/features/marketing/data/homepage";
+import { Link, useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 export function HomeHero() {
+  const t = useTranslations("Home");
   const router = useRouter();
   const [primary, ...secondaryImages] = heroContent.collageImages;
 
@@ -62,13 +63,13 @@ export function HomeHero() {
       >
         <div className="max-w-3xl space-y-5 text-white">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/70">
-            AI-powered hotel booking
+            {t("heroEyebrow")}
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-            {heroContent.title}
+            {t("heroTitle")}
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
-            {heroContent.subtitle}
+            {t("heroSubtitle")}
           </p>
         </div>
 
@@ -90,12 +91,10 @@ export function HomeHero() {
             >
               <Link href={routes.ai}>
                 <Sparkles className="size-4" />
-                {heroContent.aiCta}
+                {t("heroAiCta")}
               </Link>
             </Button>
-            <p className="text-sm text-white/70">
-              Prefer classic search? Use the form above — AI is here when you need inspiration.
-            </p>
+            <p className="text-sm text-white/70">{t("heroSearchHint")}</p>
           </div>
         </div>
       </Container>

@@ -22,18 +22,25 @@ const clientEnvSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url().optional(),
 });
 
+function sanitizeEnvValue(value: string | undefined) {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : undefined;
+}
+
+function sanitizeEnv(values: Record<string, string | undefined>) {
+  return Object.fromEntries(
+    Object.entries(values).map(([key, value]) => [key, sanitizeEnvValue(value)]),
+  );
+}
+
 function parseEnv<T extends z.ZodTypeAny>(
   schema: T,
   values: Record<string, string | undefined>,
 ): z.infer<T> {
-  const result = schema.safeParse(values);
+  const sanitized = sanitizeEnv(values);
+  const result = schema.safeParse(sanitized);
 
   if (!result.success) {
-    if (process.env.NODE_ENV === "production") {
-      console.error("Invalid environment variables:", result.error.flatten().fieldErrors);
-      throw new Error("Invalid environment variables");
-    }
-
     console.warn("Environment validation warnings:", result.error.flatten().fieldErrors);
     return schema.parse({});
   }

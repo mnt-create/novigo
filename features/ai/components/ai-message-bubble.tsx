@@ -2,15 +2,23 @@
 
 import { Bot, Sparkles, User } from "lucide-react";
 
-import type { AiMessage } from "@/features/ai/types";
+import { AiHotelRecommendationList } from "@/features/ai/components/ai-hotel-recommendation-card";
+import type { AiHotelRecommendation, AiMessage } from "@/features/ai/types";
 import { cn } from "@/lib/utils";
 
 type AiMessageBubbleProps = {
   message: AiMessage;
+  selectedHotelSlug?: string;
+  onSelectHotel?: (recommendation: AiHotelRecommendation) => void;
 };
 
-export function AiMessageBubble({ message }: AiMessageBubbleProps) {
+export function AiMessageBubble({
+  message,
+  selectedHotelSlug,
+  onSelectHotel,
+}: AiMessageBubbleProps) {
   const isUser = message.role === "user";
+  const hasRecommendations = Boolean(message.recommendations?.length);
 
   return (
     <div
@@ -28,13 +36,28 @@ export function AiMessageBubble({ message }: AiMessageBubbleProps) {
 
       <div
         className={cn(
-          "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed sm:max-w-[75%]",
-          isUser
-            ? "bg-brand-blue text-white"
-            : "border border-border/60 bg-card text-foreground shadow-sm",
+          "min-w-0 space-y-3",
+          isUser ? "max-w-[85%] sm:max-w-[75%]" : "max-w-full flex-1 sm:max-w-[85%]",
         )}
       >
-        <p className="whitespace-pre-wrap">{message.content}</p>
+        <div
+          className={cn(
+            "rounded-2xl px-4 py-3 text-sm leading-relaxed",
+            isUser
+              ? "bg-brand-blue text-white"
+              : "border border-border/60 bg-card text-foreground shadow-sm",
+          )}
+        >
+          <p className="whitespace-pre-wrap">{message.content}</p>
+        </div>
+
+        {!isUser && hasRecommendations ? (
+          <AiHotelRecommendationList
+            recommendations={message.recommendations ?? []}
+            selectedSlug={selectedHotelSlug}
+            onSelectHotel={onSelectHotel}
+          />
+        ) : null}
       </div>
     </div>
   );

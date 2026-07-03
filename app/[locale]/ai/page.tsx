@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/shared/container";
 import { Spinner } from "@/components/ui/spinner";
@@ -7,11 +8,15 @@ import { createMetadata } from "@/config/seo";
 import { spacing, typography } from "@/config/design-tokens";
 import { isGeminiConfigured } from "@/lib/gemini/config";
 
-export const metadata = createMetadata({
-  title: "Novigo AI",
-  description: "Describe your trip and get AI-powered hotel recommendations on NOVIGO.",
-  path: "/ai",
-});
+export async function generateMetadata() {
+  const t = await getTranslations("Ai");
+
+  return createMetadata({
+    title: t("pageEyebrow"),
+    description: t("pageDescription"),
+    path: "/ai",
+  });
+}
 
 function AiChatFallback() {
   return (
@@ -21,21 +26,19 @@ function AiChatFallback() {
   );
 }
 
-export default function AiPage() {
+export default async function AiPage() {
+  const t = await getTranslations("Ai");
   const isConfigured = isGeminiConfigured();
 
   return (
     <section className={`${spacing.section} bg-surface-subtle`}>
-      <Container size="narrow">
+      <Container size="wide">
         <div className="mb-8 space-y-3 text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Novigo AI
+            {t("pageEyebrow")}
           </p>
-          <h1 className={typography.h1}>Your hotel booking co-pilot</h1>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Tell us about your trip — destination, dates, budget, or vibe — and Novigo AI will
-            recommend stays from our catalog and help you decide faster.
-          </p>
+          <h1 className={typography.h1}>{t("pageTitle")}</h1>
+          <p className="mx-auto max-w-2xl text-muted-foreground">{t("pageDescription")}</p>
         </div>
 
         {!isConfigured ? (

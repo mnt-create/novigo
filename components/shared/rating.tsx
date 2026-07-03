@@ -6,6 +6,7 @@ type RatingProps = {
   value: number;
   max?: number;
   reviewCount?: number;
+  reviewLocale?: string;
   size?: "sm" | "md" | "lg";
   showValue?: boolean;
   className?: string;
@@ -21,6 +22,7 @@ function Rating({
   value,
   max = 5,
   reviewCount,
+  reviewLocale = "en-US",
   size = "md",
   showValue = true,
   className,
@@ -57,7 +59,9 @@ function Rating({
         <span className="text-sm font-medium tabular-nums">{clamped.toFixed(1)}</span>
       ) : null}
       {reviewCount !== undefined ? (
-        <span className="text-sm text-muted-foreground">({reviewCount.toLocaleString()})</span>
+        <span className="text-sm text-muted-foreground">
+          ({reviewCount.toLocaleString(reviewLocale)})
+        </span>
       ) : null}
     </div>
   );

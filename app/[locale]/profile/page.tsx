@@ -1,9 +1,10 @@
-import { redirect } from "next/navigation";
+import { getLocale } from "next-intl/server";
 
 import { createMetadata } from "@/config/seo";
 import { getCurrentUser } from "@/features/auth/services/auth.service";
 import { Container } from "@/components/shared/container";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { redirect } from "@/i18n/routing";
 
 export const metadata = createMetadata({
   title: "Profilim",
@@ -16,7 +17,9 @@ export default async function ProfilePage() {
   const user = await getCurrentUser();
 
   if (!user) {
-    redirect("/login?redirect=/profile");
+    const locale = await getLocale();
+    redirect({ href: "/login?redirect=/profile", locale });
+    return null;
   }
 
   return (

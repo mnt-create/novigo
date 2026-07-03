@@ -1,0 +1,188 @@
+{
+  "Locale": {
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "Nav": {
+    "accommodation": "Alojamiento",
+    "flights": "Vuelos",
+    "carRental": "Alquiler de coches",
+    "transfer": "Traslado",
+    "events": "Eventos",
+    "favorites": "Favoritos",
+    "notifications": "Notificaciones"
+  },
+  "Auth": {
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse"
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "explore": "Explorar",
+    "company": "Empresa",
+    "support": "Soporte",
+    "legal": "Legal",
+    "hotels": "Hoteles",
+    "destinations": "Destinos",
+    "offers": "Ofertas",
+    "aiAssistant": "Asistente IA",
+    "about": "Sobre nosotros",
+    "careers": "Carreras",
+    "press": "Prensa",
+    "partners": "Socios",
+    "helpCenter": "Centro de ayuda",
+    "contact": "Contacto",
+    "myBookings": "Mis reservas",
+    "faq": "Preguntas frecuentes",
+    "privacy": "Privacidad",
+    "terms": "Términos de uso",
+    "cookies": "Política de cookies",
+    "kvkk": "Protección de datos"
+  },
+  "Home": {
+    "heroEyebrow": "Reserva de hoteles con IA",
+    "heroTitle": "Encuentra tu estancia perfecta con IA",
+    "heroSubtitle": "Busca miles de hoteles en todo el mundo y deja que Novigo AI te muestre las estancias que encajan con tu estilo, presupuesto y fechas de viaje.",
+    "heroAiCta": "Describe tu viaje a Novigo AI",
+    "heroSearchHint": "¿Prefieres la búsqueda clásica? Usa el formulario de arriba — la IA está aquí cuando necesites inspiración.",
+    "destinationsTitle": "Destinos populares",
+    "destinationsDescription": "Explora ciudades seleccionadas que encantan a los viajeros — desde costas mediterráneas hasta capitales europeas icónicas.",
+    "destinationsLink": "Explorar todos los destinos",
+    "hotelsTitle": "Hoteles recomendados",
+    "hotelsDescription": "Estancias mejor valoradas por comodidad, ubicación y opiniones de huéspedes.",
+    "hotelsLink": "Ver todos los hoteles",
+    "viewHotel": "Ver hotel",
+    "aiEyebrow": "Tu copiloto de viaje",
+    "aiTitle": "Conoce Novigo AI",
+    "aiDescription": "¿No sabes dónde alojarte? Cuéntale tu viaje a Novigo AI y recibe hoteles seleccionados en segundos — junto a la búsqueda tradicional cuando ya sabes lo que necesitas.",
+    "aiPlaceholder": "p. ej. Hotel boutique romántico en Capadocia con vistas a los globos...",
+    "aiPromptLabel": "Describe tu viaje a Novigo AI",
+    "aiSubmit": "Preguntar a Novigo AI",
+    "aiOpenFull": "Abrir asistente IA completo",
+    "aiPreviewTitle": "Vista previa de Novigo AI",
+    "aiPreviewSubtitle": "Una capa más inteligente sobre la búsqueda de hoteles",
+    "aiExampleLabel": "Ejemplo",
+    "aiExampleText": "\"Encuentra un hotel de diseño en Roma cerca del Coliseo para 3 noches en octubre.\"",
+    "aiSuggestions": {
+      "0": "Fin de semana en París por menos de 200 €/noche",
+      "1": "Resort familiar en Antalya con club infantil",
+      "2": "Hotel de negocios cerca del aeropuerto de Estambul",
+      "3": "Escape de lujo en el desierto de Dubái"
+    },
+    "aiCapabilities": {
+      "0": "Entiende solicitudes de viaje en lenguaje natural",
+      "1": "Compara hoteles por ambiente, ubicación y valor",
+      "2": "Sugiere alternativas cuando las fechas están agotadas",
+      "3": "Funciona junto a la búsqueda clásica por destino"
+    },
+    "trust": {
+      "0": {
+        "title": "Reserva segura",
+        "description": "Cifrado de 256 bits y socios de pago de confianza protegen cada reserva."
+      },
+      "1": {
+        "title": "Hoteles verificados",
+        "description": "Cada propiedad cumple estándares de calidad y datos precisos."
+      },
+      "2": {
+        "title": "Recomendaciones con IA",
+        "description": "La coincidencia inteligente te ayuda a descubrir estancias adaptadas a tu forma de viajar."
+      },
+      "3": {
+        "title": "Soporte 24/7",
+        "description": "Personas reales y asistencia IA cuando tus planes cambian en el camino."
+      }
+    }
+  },
+  "DestinationCard": {
+    "properties": "{count} alojamientos"
+  },
+  "Site": {
+    "tagline": "Viaja más inteligente con IA",
+    "description": "Descubre y reserva hoteles en todo el mundo con búsqueda inteligente, disponibilidad en tiempo real y recomendaciones personalizadas de IA."
+  },
+  "Ai": {
+    "pageEyebrow": "Novigo AI",
+    "pageTitle": "Tu copiloto de reservas hoteleras",
+    "pageDescription": "Cuéntanos tu viaje — destino, fechas, presupuesto o estilo — y Novigo AI recomendará estancias de nuestro catálogo para que decidas más rápido.",
+    "emptyTitle": "¿Cómo puede ayudarte Novigo AI?",
+    "emptyDescription": "Pide ideas de hoteles y toca una tarjeta para ver la estancia sin salir del chat.",
+    "askAboutHotel": "Cuéntame más sobre {hotelName}: habitaciones, ubicación y para quién es ideal.",
+    "noResultsTitle": "No encontré resultados",
+    "noResultsDescription": "¿Podrías preguntar con más detalle? Añade destino, fechas, presupuesto o el tipo de estancia que buscas.",
+    "noResultsRetry": "Reintentar mi última pregunta",
+    "cards": {
+      "recommendedStays": "Estancias recomendadas",
+      "viewDetails": "Ver detalles",
+      "hotelPreview": "Vista previa del hotel",
+      "closePreview": "Cerrar vista previa",
+      "whyPicked": "Por qué Novigo AI eligió esto",
+      "aboutStay": "Sobre esta estancia",
+      "highlights": "Destacados",
+      "from": "Desde",
+      "perNight": "/ noche",
+      "checkIn": "Entrada",
+      "checkOut": "Salida",
+      "askAboutHotel": "Pregunta a Novigo AI sobre este hotel"
+    },
+    "countries": {
+      "Turkey": "Turquía"
+    },
+    "cities": {
+      "Istanbul": "Estambul"
+    },
+    "amenities": {
+      "Spa": "Spa",
+      "Pool": "Piscina",
+      "Sea view": "Vista al mar",
+      "Bosphorus view": "Vista al Bósforo",
+      "All-inclusive": "Todo incluido",
+      "Beach": "Playa",
+      "Kids club": "Club infantil",
+      "Historic district": "Distrito histórico",
+      "Fine dining": "Alta cocina"
+    },
+    "badges": {
+      "20% off": "20% dto.",
+      "15% off": "15% dto.",
+      "Popular": "Popular"
+    },
+    "hotels": {
+      "mandarin-oriental-bodrum": {
+        "tagline": "Lujo en el Egeo con calas privadas y spa de clase mundial.",
+        "description": "En la costa de Bodrum, Mandarin Oriental combina diseño minimalista con vistas turquesas, alta cocina y un spa sereno. Ideal para parejas y escapadas premium que buscan privacidad sin renunciar al puerto.",
+        "highlights": {
+          "0": "Playa privada y piscinas infinitas",
+          "1": "Spa y wellness galardonado",
+          "2": "Cerca del puerto y Yalıkavak"
+        }
+      },
+      "ciragan-palace": {
+        "tagline": "Elegancia de palacio otomano a orillas del Bósforo.",
+        "description": "Çırağan Palace Kempinski ofrece el lujo icónico de Estambul en un entorno histórico frente al mar. Interiores majestuosos, habitaciones con vistas al Bósforo y servicio excepcional.",
+        "highlights": {
+          "0": "Habitaciones y suites con vista al Bósforo",
+          "1": "Arquitectura de palacio histórico",
+          "2": "Alta cocina y spa hammam"
+        }
+      },
+      "maxx-royal-antalya": {
+        "tagline": "Confort resort todo incluido en la costa de Belek.",
+        "description": "Maxx Royal Belek está pensado para familias y amantes del sol que quieren playa, piscinas, club infantil y varios restaurantes en un solo complejo.",
+        "highlights": {
+          "0": "Comidas y bares todo incluido",
+          "1": "Club infantil y piscinas familiares",
+          "2": "Acceso directo a la playa en Belek"
+        }
+      },
+      "four-seasons-sultanahmet": {
+        "tagline": "Lujo boutique a pasos del corazón histórico de Sultanahmet.",
+        "description": "En un edificio neoclásico restaurado, Four Seasons Sultanahmet ofrece lujo íntimo cerca de Santa Sofía y la Mezquita Azul, perfecto para viajeros culturales.",
+        "highlights": {
+          "0": "A pie de Santa Sofía y el Gran Bazar",
+          "1": "Restaurante en el patio y terraza",
+          "2": "Habitaciones boutique con carácter histórico"
+        }
+      }
+    }
+  }
+}

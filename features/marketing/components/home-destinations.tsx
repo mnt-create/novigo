@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 import { DestinationCard } from "@/components/shared/destination-card";
 import { Container } from "@/components/shared/container";
 import { MotionReveal } from "@/components/shared/motion-reveal";
@@ -6,15 +8,17 @@ import { routes } from "@/constants/routes";
 import { HomeSectionHeader } from "@/features/marketing/components/home-section-header";
 import { popularDestinations } from "@/features/marketing/data/homepage";
 
-export function HomeDestinations() {
+export async function HomeDestinations() {
+  const t = await getTranslations("Home");
+
   return (
     <section className={spacing.section}>
       <Container size="wide">
         <HomeSectionHeader
-          title="Popular destinations"
-          description="Explore handpicked cities travelers love — from Mediterranean coastlines to iconic European capitals."
+          title={t("destinationsTitle")}
+          description={t("destinationsDescription")}
           href={routes.destinations}
-          linkLabel="Explore all destinations"
+          linkLabel={t("destinationsLink")}
         />
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">

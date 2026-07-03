@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { ArrowRight, Bot, Check, Sparkles } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
@@ -12,9 +11,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { spacing, typography } from "@/config/design-tokens";
 import { routes } from "@/constants/routes";
-import { aiAssistantContent } from "@/features/marketing/data/homepage";
+import { Link, useRouter } from "@/i18n/routing";
+
+const suggestionKeys = ["0", "1", "2", "3"] as const;
+const capabilityKeys = ["0", "1", "2", "3"] as const;
 
 export function HomeAiAssistant() {
+  const t = useTranslations("Home");
   const router = useRouter();
   const [prompt, setPrompt] = useState("");
 
@@ -32,23 +35,23 @@ export function HomeAiAssistant() {
             <div className="space-y-6 p-6 sm:p-8 lg:p-10">
               <div className="space-y-3">
                 <Badge variant="secondary" className="rounded-full px-3 py-1">
-                  {aiAssistantContent.eyebrow}
+                  {t("aiEyebrow")}
                 </Badge>
-                <h2 className={typography.h2}>{aiAssistantContent.title}</h2>
-                <p className="max-w-xl text-muted-foreground">{aiAssistantContent.description}</p>
+                <h2 className={typography.h2}>{t("aiTitle")}</h2>
+                <p className="max-w-xl text-muted-foreground">{t("aiDescription")}</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {aiAssistantContent.suggestions.map((suggestion) => (
+                {suggestionKeys.map((key) => (
                   <Button
-                    key={suggestion}
+                    key={key}
                     type="button"
                     variant="outline"
                     size="sm"
                     className="h-auto whitespace-normal rounded-full px-3 py-1.5 text-left text-xs font-normal"
-                    onClick={() => handleSubmit(suggestion)}
+                    onClick={() => handleSubmit(t(`aiSuggestions.${key}`))}
                   >
-                    {suggestion}
+                    {t(`aiSuggestions.${key}`)}
                   </Button>
                 ))}
               </div>
@@ -64,19 +67,23 @@ export function HomeAiAssistant() {
                   inputSize="lg"
                   value={prompt}
                   onChange={(event) => setPrompt(event.target.value)}
-                  placeholder={aiAssistantContent.placeholder}
-                  aria-label="Describe your trip to Novigo AI"
+                  placeholder={t("aiPlaceholder")}
+                  aria-label={t("aiPromptLabel")}
                   className="flex-1"
                 />
                 <Button type="submit" size="lg" className="bg-brand-blue hover:bg-brand-blue/90">
                   <Sparkles className="size-4" />
-                  Ask Novigo AI
+                  {t("aiSubmit")}
                 </Button>
               </form>
 
-              <Button variant="ghost" className="px-0 text-brand-blue hover:bg-transparent hover:text-brand-blue/90" asChild>
+              <Button
+                variant="ghost"
+                className="px-0 text-brand-blue hover:bg-transparent hover:text-brand-blue/90"
+                asChild
+              >
                 <Link href={routes.ai}>
-                  Open full AI assistant
+                  {t("aiOpenFull")}
                   <ArrowRight className="size-4" />
                 </Link>
               </Button>
@@ -88,29 +95,25 @@ export function HomeAiAssistant() {
                   <Bot className="size-6" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="font-semibold">Novigo AI preview</p>
-                  <p className="text-sm text-muted-foreground">
-                    A smarter layer on top of hotel search
-                  </p>
+                  <p className="font-semibold">{t("aiPreviewTitle")}</p>
+                  <p className="text-sm text-muted-foreground">{t("aiPreviewSubtitle")}</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {aiAssistantContent.capabilities.map((capability) => (
-                  <li key={capability} className="flex items-start gap-3 text-sm">
+                {capabilityKeys.map((key) => (
+                  <li key={key} className="flex items-start gap-3 text-sm">
                     <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
                       <Check className="size-3" />
                     </span>
-                    <span className="text-muted-foreground">{capability}</span>
+                    <span className="text-muted-foreground">{t(`aiCapabilities.${key}`)}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-8 rounded-2xl border border-border/60 bg-background p-4 text-sm">
-                <p className="font-medium">Example</p>
-                <p className="mt-2 text-muted-foreground">
-                  &ldquo;Find a design-forward hotel in Rome near the Colosseum for 3 nights in October.&rdquo;
-                </p>
+                <p className="font-medium">{t("aiExampleLabel")}</p>
+                <p className="mt-2 text-muted-foreground">{t("aiExampleText")}</p>
               </div>
             </MotionReveal>
           </div>

@@ -1,0 +1,188 @@
+{
+  "Locale": {
+    "selectLanguage": "Select language"
+  },
+  "Nav": {
+    "accommodation": "Stays",
+    "flights": "Flights",
+    "carRental": "Car rental",
+    "transfer": "Transfer",
+    "events": "Events",
+    "favorites": "Favorites",
+    "notifications": "Notifications"
+  },
+  "Auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "explore": "Explore",
+    "company": "Company",
+    "support": "Support",
+    "legal": "Legal",
+    "hotels": "Hotels",
+    "destinations": "Destinations",
+    "offers": "Offers",
+    "aiAssistant": "AI assistant",
+    "about": "About us",
+    "careers": "Careers",
+    "press": "Press",
+    "partners": "Partners",
+    "helpCenter": "Help center",
+    "contact": "Contact",
+    "myBookings": "My bookings",
+    "faq": "FAQ",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "cookies": "Cookie policy",
+    "kvkk": "Data protection"
+  },
+  "Home": {
+    "heroEyebrow": "AI-powered hotel booking",
+    "heroTitle": "Find your perfect stay with AI",
+    "heroSubtitle": "Search thousands of hotels worldwide and let Novigo AI surface the stays that match your style, budget, and travel dates.",
+    "heroAiCta": "Describe your trip to Novigo AI",
+    "heroSearchHint": "Prefer classic search? Use the form above — AI is here when you need inspiration.",
+    "destinationsTitle": "Popular destinations",
+    "destinationsDescription": "Explore handpicked cities travelers love — from Mediterranean coastlines to iconic European capitals.",
+    "destinationsLink": "Explore all destinations",
+    "hotelsTitle": "Recommended hotels",
+    "hotelsDescription": "Top-rated stays picked for exceptional comfort, location, and guest reviews.",
+    "hotelsLink": "Browse all hotels",
+    "viewHotel": "View hotel",
+    "aiEyebrow": "Your travel co-pilot",
+    "aiTitle": "Meet Novigo AI",
+    "aiDescription": "Not sure where to stay? Tell Novigo AI about your trip and get curated hotel picks in seconds — alongside traditional search when you already know what you need.",
+    "aiPlaceholder": "e.g. Romantic boutique hotel in Cappadocia with balloon views...",
+    "aiPromptLabel": "Describe your trip to Novigo AI",
+    "aiSubmit": "Ask Novigo AI",
+    "aiOpenFull": "Open full AI assistant",
+    "aiPreviewTitle": "Novigo AI preview",
+    "aiPreviewSubtitle": "A smarter layer on top of hotel search",
+    "aiExampleLabel": "Example",
+    "aiExampleText": "\"Find a design-forward hotel in Rome near the Colosseum for 3 nights in October.\"",
+    "aiSuggestions": {
+      "0": "Weekend in Paris under €200/night",
+      "1": "Family resort in Antalya with kids club",
+      "2": "Business hotel near Istanbul airport",
+      "3": "Luxury desert escape in Dubai"
+    },
+    "aiCapabilities": {
+      "0": "Understands natural-language trip requests",
+      "1": "Compares hotels by vibe, location, and value",
+      "2": "Suggests alternatives when dates are sold out",
+      "3": "Works alongside classic destination search"
+    },
+    "trust": {
+      "0": {
+        "title": "Secure booking",
+        "description": "256-bit encryption and trusted payment partners protect every reservation."
+      },
+      "1": {
+        "title": "Verified hotels",
+        "description": "Every property is vetted for quality standards and accurate listing details."
+      },
+      "2": {
+        "title": "AI-powered recommendations",
+        "description": "Smart matching helps you discover stays tailored to how you actually travel."
+      },
+      "3": {
+        "title": "24/7 support",
+        "description": "Real humans and AI assistance whenever your plans change on the road."
+      }
+    }
+  },
+  "DestinationCard": {
+    "properties": "{count} properties"
+  },
+  "Site": {
+    "tagline": "Travel Smarter with AI",
+    "description": "Discover and book hotels worldwide with intelligent search, real-time availability, and personalized AI recommendations."
+  },
+  "Ai": {
+    "pageEyebrow": "Novigo AI",
+    "pageTitle": "Your hotel booking co-pilot",
+    "pageDescription": "Tell us about your trip — destination, dates, budget, or vibe — and Novigo AI will recommend stays from our catalog and help you decide faster.",
+    "emptyTitle": "How can Novigo AI help?",
+    "emptyDescription": "Ask for hotel ideas, then tap a card to preview the stay without leaving chat.",
+    "askAboutHotel": "Tell me more about {hotelName} — rooms, location, and who it's best for.",
+    "noResultsTitle": "I couldn't find a match",
+    "noResultsDescription": "Could you ask a bit more clearly? Add destination, dates, budget, or the kind of stay you want.",
+    "noResultsRetry": "Try my last question again",
+    "cards": {
+      "recommendedStays": "Recommended stays",
+      "viewDetails": "View details",
+      "hotelPreview": "Hotel preview",
+      "closePreview": "Close hotel preview",
+      "whyPicked": "Why Novigo AI picked this",
+      "aboutStay": "About this stay",
+      "highlights": "Highlights",
+      "from": "From",
+      "perNight": "/ night",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "askAboutHotel": "Ask Novigo AI about this hotel"
+    },
+    "countries": {
+      "Turkey": "Turkey"
+    },
+    "cities": {
+      "Istanbul": "Istanbul"
+    },
+    "amenities": {
+      "Spa": "Spa",
+      "Pool": "Pool",
+      "Sea view": "Sea view",
+      "Bosphorus view": "Bosphorus view",
+      "All-inclusive": "All-inclusive",
+      "Beach": "Beach",
+      "Kids club": "Kids club",
+      "Historic district": "Historic district",
+      "Fine dining": "Fine dining"
+    },
+    "badges": {
+      "20% off": "20% off",
+      "15% off": "15% off",
+      "Popular": "Popular"
+    },
+    "hotels": {
+      "mandarin-oriental-bodrum": {
+        "tagline": "Aegean luxury with private bays and world-class spa rituals.",
+        "description": "Set along the Bodrum coastline, Mandarin Oriental pairs minimalist design with turquoise views, fine dining, and a serene spa experience. Ideal for couples and premium leisure stays seeking privacy without sacrificing access to the marina.",
+        "highlights": {
+          "0": "Private beach and infinity pools",
+          "1": "Award-winning spa and wellness",
+          "2": "Marina and Yalıkavak proximity"
+        }
+      },
+      "ciragan-palace": {
+        "tagline": "Ottoman palace elegance on the Bosphorus shoreline.",
+        "description": "Çırağan Palace Kempinski offers iconic Istanbul luxury in a historic waterfront setting. Expect grand interiors, Bosphorus-facing rooms, and exceptional service for honeymoons, celebrations, and high-end city breaks.",
+        "highlights": {
+          "0": "Bosphorus-view rooms and suites",
+          "1": "Historic palace architecture",
+          "2": "Fine dining and hammam spa"
+        }
+      },
+      "maxx-royal-antalya": {
+        "tagline": "All-inclusive resort comfort on the Belek coast.",
+        "description": "Maxx Royal Belek is built for families and sun-seekers who want everything on property — beaches, pools, kids clubs, and multiple restaurants — with a polished resort feel and strong guest reviews.",
+        "highlights": {
+          "0": "All-inclusive dining and bars",
+          "1": "Kids club and family pools",
+          "2": "Direct beach access in Belek"
+        }
+      },
+      "four-seasons-sultanahmet": {
+        "tagline": "Boutique luxury steps from Sultanahmet's historic core.",
+        "description": "Housed in a restored neoclassical building, Four Seasons Sultanahmet delivers intimate luxury near Hagia Sophia and the Blue Mosque. Perfect for culture-focused travelers who want walkable old city access with refined comfort.",
+        "highlights": {
+          "0": "Walkable to Hagia Sophia & Grand Bazaar",
+          "1": "Courtyard restaurant and terrace",
+          "2": "Boutique rooms with historic character"
+        }
+      }
+    }
+  }
+}

@@ -72,7 +72,7 @@ export const popularDestinations: DestinationCardData[] = [
     country: "Turkey",
     hotelCount: 823,
     imageUrl:
-      "https://images.unsplash.com/photo-1524231757912-21fb7021d0a2?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1733814191571-bd733a99c680?auto=format&fit=crop&w=900&q=80",
   },
   {
     slug: "antalya",
@@ -80,7 +80,7 @@ export const popularDestinations: DestinationCardData[] = [
     country: "Turkey",
     hotelCount: 612,
     imageUrl:
-      "https://images.unsplash.com/photo-1590073242678-70ee3d21725e?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80",
   },
   {
     slug: "cappadocia",
@@ -88,7 +88,7 @@ export const popularDestinations: DestinationCardData[] = [
     country: "Turkey",
     hotelCount: 156,
     imageUrl:
-      "https://images.unsplash.com/photo-1640130601230-7cbd966329dc?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1682687982107-14492010e05e?auto=format&fit=crop&w=900&q=80",
   },
   {
     slug: "paris",
@@ -155,7 +155,7 @@ export const recommendedHotels: HotelCardData[] = [
     priceFrom: 9800,
     currency: "TRY",
     imageUrl:
-      "https://images.unsplash.com/photo-1571008887538-b36bb745f9cb?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=80",
     amenities: ["All-inclusive", "Beach", "Kids club"],
     badge: "15% off",
   },

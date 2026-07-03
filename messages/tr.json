@@ -1,0 +1,188 @@
+{
+  "Locale": {
+    "selectLanguage": "Dil seçin"
+  },
+  "Nav": {
+    "accommodation": "Konaklama",
+    "flights": "Uçak Bileti",
+    "carRental": "Araç Kiralama",
+    "transfer": "Transfer",
+    "events": "Etkinlikler",
+    "favorites": "Favoriler",
+    "notifications": "Bildirimler"
+  },
+  "Auth": {
+    "signIn": "Giriş yap",
+    "signUp": "Kayıt ol"
+  },
+  "Footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "explore": "Keşfet",
+    "company": "Şirket",
+    "support": "Destek",
+    "legal": "Yasal",
+    "hotels": "Oteller",
+    "destinations": "Destinasyonlar",
+    "offers": "Kampanyalar",
+    "aiAssistant": "AI Asistan",
+    "about": "Hakkımızda",
+    "careers": "Kariyer",
+    "press": "Basın",
+    "partners": "İş ortakları",
+    "helpCenter": "Yardım Merkezi",
+    "contact": "İletişim",
+    "myBookings": "Rezervasyonlarım",
+    "faq": "SSS",
+    "privacy": "Gizlilik",
+    "terms": "Kullanım Koşulları",
+    "cookies": "Çerez Politikası",
+    "kvkk": "KVKK"
+  },
+  "Home": {
+    "heroEyebrow": "Yapay zeka destekli otel rezervasyonu",
+    "heroTitle": "Yapay zeka ile mükemmel konaklamanı bul",
+    "heroSubtitle": "Dünya genelinde binlerce oteli ara; Novigo AI tarzına, bütçene ve seyahat tarihlerine uygun konaklamaları saniyeler içinde öne çıkarsın.",
+    "heroAiCta": "Seyahatini Novigo AI'a anlat",
+    "heroSearchHint": "Klasik aramayı mı tercih ediyorsun? Yukarıdaki formu kullan — ilham gerektiğinde AI burada.",
+    "destinationsTitle": "Popüler destinasyonlar",
+    "destinationsDescription": "Gezginlerin sevdiği seçilmiş şehirleri keşfet — Akdeniz kıyılarından ikonik Avrupa başkentlerine.",
+    "destinationsLink": "Tüm destinasyonları keşfet",
+    "hotelsTitle": "Önerilen oteller",
+    "hotelsDescription": "Konfor, konum ve misafir yorumlarına göre seçilmiş en iyi oteller.",
+    "hotelsLink": "Tüm otellere göz at",
+    "viewHotel": "Oteli gör",
+    "aiEyebrow": "Seyahat yardımcın",
+    "aiTitle": "Novigo AI ile tanış",
+    "aiDescription": "Nerede kalacağından emin değil misin? Seyahatini Novigo AI'a anlat; saniyeler içinde seçilmiş otel önerileri al — ihtiyacın belli olduğunda klasik arama da yanında.",
+    "aiPlaceholder": "ör. Balon manzaralı Kapadokya'da romantik butik otel...",
+    "aiPromptLabel": "Seyahatini Novigo AI'a anlat",
+    "aiSubmit": "Novigo AI'a sor",
+    "aiOpenFull": "Tam AI asistanını aç",
+    "aiPreviewTitle": "Novigo AI önizleme",
+    "aiPreviewSubtitle": "Otel aramasının üzerinde daha akıllı bir katman",
+    "aiExampleLabel": "Örnek",
+    "aiExampleText": "\"Ekim ayında 3 gece Roma'da Kolezyum yakınında tasarım odaklı bir otel bul.\"",
+    "aiSuggestions": {
+      "0": "Paris'te gece 200 € altında hafta sonu",
+      "1": "Antalya'da çocuk kulüplü aile oteli",
+      "2": "İstanbul havalimanı yakınında iş oteli",
+      "3": "Dubai'de lüks çöl kaçamağı"
+    },
+    "aiCapabilities": {
+      "0": "Doğal dilde seyahat isteklerini anlar",
+      "1": "Otelleri atmosfer, konum ve değere göre karşılaştırır",
+      "2": "Tarihler dolu olduğunda alternatifler önerir",
+      "3": "Klasik destinasyon aramasıyla birlikte çalışır"
+    },
+    "trust": {
+      "0": {
+        "title": "Güvenli rezervasyon",
+        "description": "256-bit şifreleme ve güvenilir ödeme ortakları her rezervasyonu korur."
+      },
+      "1": {
+        "title": "Doğrulanmış oteller",
+        "description": "Her tesis kalite standartları ve doğru liste bilgileri için incelenir."
+      },
+      "2": {
+        "title": "AI destekli öneriler",
+        "description": "Akıllı eşleştirme, gerçekten nasıl seyahat ettiğine uygun konaklamalar keşfetmeni sağlar."
+      },
+      "3": {
+        "title": "7/24 destek",
+        "description": "Yoldayken planların değiştiğinde gerçek insanlar ve AI yardımı."
+      }
+    }
+  },
+  "DestinationCard": {
+    "properties": "{count} tesis"
+  },
+  "Site": {
+    "tagline": "AI ile daha akıllı seyahat et",
+    "description": "Akıllı arama, anlık müsaitlik ve kişiselleştirilmiş AI önerileriyle dünya genelinde otelleri keşfet ve rezerve et."
+  },
+  "Ai": {
+    "pageEyebrow": "Novigo AI",
+    "pageTitle": "Otel rezervasyon yardımcın",
+    "pageDescription": "Seyahatini anlat — destinasyon, tarih, bütçe veya tarz — Novigo AI katalogdaki konaklamaları önersin ve daha hızlı karar vermeni sağlasın.",
+    "emptyTitle": "Novigo AI nasıl yardımcı olabilir?",
+    "emptyDescription": "Otel fikirleri iste, ardından sohbetten ayrılmadan bir karta dokunarak konaklamayı önizle.",
+    "askAboutHotel": "{hotelName} hakkında daha fazla bilgi ver — odalar, konum ve kimler için uygun.",
+    "noResultsTitle": "Sonuç bulamadım",
+    "noResultsDescription": "Daha açık sorar mısın? Destinasyon, tarih, bütçe veya otel tarzını biraz daha detaylandır.",
+    "noResultsRetry": "Son soruyu tekrar dene",
+    "cards": {
+      "recommendedStays": "Önerilen konaklamalar",
+      "viewDetails": "Detayları gör",
+      "hotelPreview": "Otel önizleme",
+      "closePreview": "Önizlemeyi kapat",
+      "whyPicked": "Novigo AI neden bunu seçti",
+      "aboutStay": "Bu konaklama hakkında",
+      "highlights": "Öne çıkanlar",
+      "from": "Başlangıç",
+      "perNight": "/ gece",
+      "checkIn": "Giriş",
+      "checkOut": "Çıkış",
+      "askAboutHotel": "Bu otel hakkında Novigo AI'a sor"
+    },
+    "countries": {
+      "Turkey": "Türkiye"
+    },
+    "cities": {
+      "Istanbul": "İstanbul"
+    },
+    "amenities": {
+      "Spa": "Spa",
+      "Pool": "Havuz",
+      "Sea view": "Deniz manzarası",
+      "Bosphorus view": "Boğaz manzarası",
+      "All-inclusive": "Her şey dahil",
+      "Beach": "Plaj",
+      "Kids club": "Çocuk kulübü",
+      "Historic district": "Tarihi bölge",
+      "Fine dining": "Gurme restoran"
+    },
+    "badges": {
+      "20% off": "%20 indirim",
+      "15% off": "%15 indirim",
+      "Popular": "Popüler"
+    },
+    "hotels": {
+      "mandarin-oriental-bodrum": {
+        "tagline": "Özel koylar ve dünya standartında spa ritüelleriyle Ege lüksü",
+        "description": "Bodrum sahil şeridinde konumlanan Mandarin Oriental; turkuaz manzaralar, fine dining ve sakin bir spa deneyimiyle minimalist tasarımı bir araya getirir. Marina erişiminden ödün vermeden mahremiyet arayan çiftler ve premium tatilciler için idealdir.",
+        "highlights": {
+          "0": "Özel plaj ve sonsuzluk havuzları",
+          "1": "Ödüllü spa ve wellness",
+          "2": "Marina ve Yalıkavak yakınlığı"
+        }
+      },
+      "ciragan-palace": {
+        "tagline": "Boğaz kıyısında Osmanlı saray zarafeti",
+        "description": "Çırağan Palace Kempinski, tarihi bir sahil ortamında İstanbul'un ikonik lüksünü sunar. Görkemli iç mekânlar, Boğaz manzaralı odalar ve balayı, kutlama ile üst segment şehir kaçamakları için olağanüstü hizmet bekleyin.",
+        "highlights": {
+          "0": "Boğaz manzaralı odalar ve süitler",
+          "1": "Tarihi saray mimarisi",
+          "2": "Fine dining ve hamam spa"
+        }
+      },
+      "maxx-royal-antalya": {
+        "tagline": "Belek sahiline uzanan her şey dahil resort konforu",
+        "description": "Maxx Royal Belek; plaj, havuz, çocuk kulüpleri ve birden fazla restoranı tek tesiste sunan, aileler ve güneş tutkunları için tasarlanmış parlak bir resort deneyimidir.",
+        "highlights": {
+          "0": "Her şey dahil yeme-içme",
+          "1": "Çocuk kulübü ve aile havuzları",
+          "2": "Belek'te doğrudan plaj erişimi"
+        }
+      },
+      "four-seasons-sultanahmet": {
+        "tagline": "Sultanahmet'in tarihi kalbine birkaç adım mesafede butik lüks",
+        "description": "Restore edilmiş neoklasik bir binada yer alan Four Seasons Sultanahmet; Ayasofya ve Sultanahmet Camii'ne yakın, kültür odaklı gezginler için yürünebilir konumda rafine konfor sunar.",
+        "highlights": {
+          "0": "Ayasofya ve Kapalı Çarşı'ya yürüme mesafesi",
+          "1": "Avlu restoranı ve teras",
+          "2": "Tarihi karaktere sahip butik odalar"
+        }
+      }
+    }
+  }
+}

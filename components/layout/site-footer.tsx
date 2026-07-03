@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Camera, MessageCircle, Play, Share2 } from "lucide-react";
 
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Logo } from "@/components/ui/logo";
 import { Separator } from "@/components/ui/separator";
-import { footerColumns } from "@/constants/navigation";
+import { footerColumnIds } from "@/constants/navigation";
 import { siteConfig } from "@/config/site";
+import { Link } from "@/i18n/routing";
 
 const socialLinks = [
   { label: "Facebook", icon: Share2, href: "#" },
@@ -13,7 +15,10 @@ const socialLinks = [
   { label: "Youtube", icon: Play, href: "#" },
 ] as const;
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const t = await getTranslations("Footer");
+  const tSite = await getTranslations("Site");
+
   return (
     <footer className="bg-brand-navy text-white">
       <div className="mx-auto w-full max-w-[90rem] px-4 py-14 sm:px-6 lg:px-8">
@@ -21,7 +26,7 @@ export function SiteFooter() {
           <div className="space-y-4">
             <Logo tone="light" size="md" href="/" />
             <p className="max-w-sm text-sm leading-relaxed text-white/70">
-              {siteConfig.description}
+              {tSite("description")}
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ label, icon: Icon, href }) => (
@@ -38,17 +43,17 @@ export function SiteFooter() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {Object.values(footerColumns).map((column) => (
-              <div key={column.title}>
-                <p className="text-sm font-semibold">{column.title}</p>
+            {Object.values(footerColumnIds).map((column) => (
+              <div key={column.id}>
+                <p className="text-sm font-semibold">{t(column.id)}</p>
                 <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.id}>
                       <Link
                         href={link.href}
                         className="text-sm text-white/70 transition-colors hover:text-white"
                       >
-                        {link.label}
+                        {t(link.id)}
                       </Link>
                     </li>
                   ))}
@@ -61,11 +66,11 @@ export function SiteFooter() {
         <Separator className="my-8 bg-white/10" />
 
         <div className="flex flex-col gap-4 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. Tüm hakları saklıdır.</p>
-          <div className="flex gap-4">
-            <button type="button" className="hover:text-white">
-              Türkçe
-            </button>
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. {t("rights")}
+          </p>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher variant="footer" />
             <button type="button" className="hover:text-white">
               TRY ₺
             </button>
