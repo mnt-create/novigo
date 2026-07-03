@@ -1,43 +1,71 @@
-import { getServerEnv } from "@/lib/env";
+import {
+  getHotelRunnerBaseUrl,
+  getHotelRunnerHrId,
+  getHotelRunnerToken,
+  isHotelRunnerConfigured,
+} from "@/lib/hotelrunner/config";
 
 type HotelRunnerRequestOptions = {
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   body?: unknown;
-  searchParams?: Record<string, string | number | boolean | undefined>;
+  searchParams?: Record<string, string | number | boolean | undefined | string[]>;
+  cache?: RequestCache;
+  revalidate?: number | false;
 };
 
 export class HotelRunnerClient {
-  private readonly apiKey: string;
+  private readonly hrId: string;
+  private readonly token: string;
   private readonly baseUrl: string;
 
-  constructor(apiKey: string, baseUrl: string) {
-    this.apiKey = apiKey;
+  constructor(hrId: string, token: string, baseUrl: string) {
+    this.hrId = hrId;
+    this.token = token;
     this.baseUrl = baseUrl.replace(/\/$/, "");
   }
 
   async request<T>(path: string, options: HotelRunnerRequestOptions = {}): Promise<T> {
-    const url = new URL(`${this.baseUrl}${path}`);
+    const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+    const url = new URL(`${this.baseUrl}${normalizedPath}`);
+
+    url.searchParams.set("hr_id", this.hrId);
+    url.searchParams.set("token", this.token);
 
     if (options.searchParams) {
       Object.entries(options.searchParams).forEach(([key, value]) => {
-        if (value !== undefined) {
-          url.searchParams.set(key, String(value));
+        if (value === undefined) return;
+
+        if (Array.isArray(value)) {
+          value.forEach((item) => url.searchParams.append(`${key}[]`, item));
+          return;
         }
+
+        url.searchParams.set(key, String(value));
       });
     }
 
     const response = await fetch(url, {
       method: options.method ?? "GET",
       headers: {
-        Authorization: `Bearer ${this.apiKey}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
+        "cache-control": "no-cache",
       },
       body: options.body ? JSON.stringify(options.body) : undefined,
-      next: { revalidate: 60 },
+      cache: options.cache ?? "no-store",
+      next:
+        options.revalidate === false
+          ? undefined
+          : { revalidate: options.revalidate ?? 60 },
     });
 
     if (!response.ok) {
-      throw new Error(`HotelRunner API error: ${response.status} ${response.statusText}`);
+      const errorBody = await response.text().catch(() => "");
+      const error = new Error(
+        errorBody || `HotelRunner API error: ${response.status} ${response.statusText}`,
+      ) as Error & { status?: number };
+      error.status = response.status;
+      throw error;
     }
 
     return response.json() as Promise<T>;
@@ -47,14 +75,16 @@ export class HotelRunnerClient {
 let hotelRunnerClient: HotelRunnerClient | null = null;
 
 export function getHotelRunnerClient() {
-  const { HOTELRUNNER_API_KEY, HOTELRUNNER_API_URL } = getServerEnv();
-
-  if (!HOTELRUNNER_API_KEY || !HOTELRUNNER_API_URL) {
+  if (!isHotelRunnerConfigured()) {
     throw new Error("HotelRunner API credentials are not configured.");
   }
 
   if (!hotelRunnerClient) {
-    hotelRunnerClient = new HotelRunnerClient(HOTELRUNNER_API_KEY, HOTELRUNNER_API_URL);
+    hotelRunnerClient = new HotelRunnerClient(
+      getHotelRunnerHrId(),
+      getHotelRunnerToken(),
+      getHotelRunnerBaseUrl(),
+    );
   }
 
   return hotelRunnerClient;

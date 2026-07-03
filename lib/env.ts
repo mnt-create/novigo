@@ -6,7 +6,11 @@ const serverEnvSchema = z.object({
   STRIPE_SECRET_KEY: z.string().min(1).optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+  HOTELRUNNER_DEMO_MODE: z.string().min(1).optional(),
+  HOTELRUNNER_HR_ID: z.string().min(1).optional(),
+  HOTELRUNNER_TOKEN: z.string().min(1).optional(),
   HOTELRUNNER_API_KEY: z.string().min(1).optional(),
+  HOTELRUNNER_PROPERTY_NAME: z.string().min(1).optional(),
   HOTELRUNNER_API_URL: z.string().url().optional(),
 });
 
@@ -52,7 +56,11 @@ export function getServerEnv() {
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    HOTELRUNNER_DEMO_MODE: process.env.HOTELRUNNER_DEMO_MODE,
+    HOTELRUNNER_HR_ID: process.env.HOTELRUNNER_HR_ID,
+    HOTELRUNNER_TOKEN: process.env.HOTELRUNNER_TOKEN,
     HOTELRUNNER_API_KEY: process.env.HOTELRUNNER_API_KEY,
+    HOTELRUNNER_PROPERTY_NAME: process.env.HOTELRUNNER_PROPERTY_NAME,
     HOTELRUNNER_API_URL: process.env.HOTELRUNNER_API_URL,
   });
 }
