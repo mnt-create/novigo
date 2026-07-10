@@ -125,10 +125,24 @@
       "askAboutHotel": "Bu otel hakkında Novigo AI'a sor"
     },
     "countries": {
-      "Turkey": "Türkiye"
+      "Turkey": "Türkiye",
+      "France": "Fransa",
+      "UAE": "BAE",
+      "Italy": "İtalya",
+      "United Kingdom": "Birleşik Krallık",
+      "Spain": "İspanya"
     },
     "cities": {
-      "Istanbul": "İstanbul"
+      "Istanbul": "İstanbul",
+      "Goreme": "Göreme",
+      "Uchisar": "Uçhisar",
+      "Paris": "Paris",
+      "Dubai": "Dubai",
+      "Rome": "Roma",
+      "London": "Londra",
+      "Barcelona": "Barselona",
+      "Bodrum": "Bodrum",
+      "Antalya": "Antalya"
     },
     "amenities": {
       "Spa": "Spa",
@@ -139,12 +153,23 @@
       "Beach": "Plaj",
       "Kids club": "Çocuk kulübü",
       "Historic district": "Tarihi bölge",
-      "Fine dining": "Gurme restoran"
+      "Fine dining": "Gurme restoran",
+      "City center": "Şehir merkezi",
+      "Cave suite": "Mağara süiti",
+      "Balloon view": "Balon manzarası",
+      "Rooftop bar": "Çatı katı bar",
+      "Private beach": "Özel plaj",
+      "Golf": "Golf",
+      "Marina": "Marina"
     },
     "badges": {
       "20% off": "%20 indirim",
       "15% off": "%15 indirim",
-      "Popular": "Popüler"
+      "10% off": "%10 indirim",
+      "Popular": "Popüler",
+      "Luxury": "Lüks",
+      "Best seller": "Çok satan",
+      "New": "Yeni"
     },
     "hotels": {
       "mandarin-oriental-bodrum": {

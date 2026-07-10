@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 import { getAiHotelStayTimes } from "@/features/ai/data/hotel-details";
+import { getHotelDetailCopy } from "@/features/ai/data/hotel-detail-copy";
 import type { Locale } from "@/i18n/routing";
 
 const numberLocales: Record<Locale, string> = {
@@ -41,20 +42,26 @@ export function useAiHotelCopy() {
   }
 
   function getHotelDetail(slug: string) {
-    const baseKey = `hotels.${slug}`;
-    const tagline = translateOptional(t, `${baseKey}.tagline`);
-    if (!tagline) return undefined;
+    const copy = getHotelDetailCopy(locale, slug);
+    const messagesCopy = translateOptional(t, `hotels.${slug}.tagline`)
+      ? {
+          tagline: t(`hotels.${slug}.tagline`),
+          description: t(`hotels.${slug}.description`),
+          highlights: ["0", "1", "2"]
+            .map((index) => translateOptional(t, `hotels.${slug}.highlights.${index}`))
+            .filter((item): item is string => Boolean(item)),
+        }
+      : null;
 
-    const highlights = ["0", "1", "2"]
-      .map((index) => translateOptional(t, `${baseKey}.highlights.${index}`))
-      .filter((item): item is string => Boolean(item));
+    const source = messagesCopy?.tagline ? messagesCopy : copy;
+    if (!source?.tagline) return undefined;
 
     const stayTimes = getAiHotelStayTimes(slug);
 
     return {
-      tagline,
-      description: t(`${baseKey}.description`),
-      highlights,
+      tagline: source.tagline,
+      description: source.description,
+      highlights: source.highlights,
       checkIn: stayTimes?.checkIn ?? "15:00",
       checkOut: stayTimes?.checkOut ?? "12:00",
     };

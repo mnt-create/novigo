@@ -1,5 +1,6 @@
 import type { DestinationCardData } from "@/components/shared/destination-card";
-import type { HotelCardData } from "@/components/shared/hotel-card";
+
+export { recommendedHotels } from "@/features/marketing/data/recommended-hotels";
 
 export const heroContent = {
   title: "Find your perfect stay with AI",
@@ -116,60 +117,3 @@ export const popularDestinations: DestinationCardData[] = [
   },
 ];
 
-export const recommendedHotels: HotelCardData[] = [
-  {
-    slug: "mandarin-oriental-bodrum",
-    name: "Mandarin Oriental Bodrum",
-    city: "Bodrum",
-    country: "Turkey",
-    rating: 9.2,
-    reviewCount: 1240,
-    priceFrom: 8450,
-    currency: "TRY",
-    imageUrl:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
-    amenities: ["Spa", "Pool", "Sea view"],
-    badge: "20% off",
-  },
-  {
-    slug: "ciragan-palace",
-    name: "Çırağan Palace Kempinski",
-    city: "Istanbul",
-    country: "Turkey",
-    rating: 9.4,
-    reviewCount: 2100,
-    priceFrom: 12200,
-    currency: "TRY",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80",
-    amenities: ["Spa", "Bosphorus view", "Pool"],
-    badge: "Popular",
-  },
-  {
-    slug: "maxx-royal-antalya",
-    name: "Maxx Royal Belek",
-    city: "Antalya",
-    country: "Turkey",
-    rating: 9.1,
-    reviewCount: 980,
-    priceFrom: 9800,
-    currency: "TRY",
-    imageUrl:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=80",
-    amenities: ["All-inclusive", "Beach", "Kids club"],
-    badge: "15% off",
-  },
-  {
-    slug: "four-seasons-sultanahmet",
-    name: "Four Seasons Sultanahmet",
-    city: "Istanbul",
-    country: "Turkey",
-    rating: 9.6,
-    reviewCount: 890,
-    priceFrom: 15600,
-    currency: "TRY",
-    imageUrl:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80",
-    amenities: ["Historic district", "Spa", "Fine dining"],
-  },
-];
