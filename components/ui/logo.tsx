@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/routing";
 
-import { NovigoMarkIcon } from "@/components/icons/novigo-mark-icon";
+import { NexifyMarkIcon } from "@/components/icons/nexify-mark-icon";
 import { cn } from "@/lib/utils";
 
 const sizeStyles = {
@@ -51,7 +51,7 @@ function Logo({
       )}
     >
       {showMark ? (
-        <NovigoMarkIcon
+        <NexifyMarkIcon
           className={cn(
             styles.mark,
             "shrink-0",
@@ -60,8 +60,8 @@ function Logo({
           aria-hidden={showWordmark}
         />
       ) : null}
-      {showWordmark ? <span className={styles.text}>NOVIGO</span> : null}
-      {!showWordmark && showMark ? <span className="sr-only">NOVIGO</span> : null}
+      {showWordmark ? <span className={styles.text}>Nexify</span> : null}
+      {!showWordmark && showMark ? <span className="sr-only">Nexify</span> : null}
     </span>
   );
 
@@ -70,7 +70,11 @@ function Logo({
   }
 
   return (
-    <Link href={href} aria-label="NOVIGO home" className="inline-flex rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+    <Link
+      href={href}
+      aria-label="Nexify home"
+      className="inline-flex rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+    >
       {content}
     </Link>
   );

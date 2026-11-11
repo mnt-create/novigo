@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 
 import { fadeInUp } from "@/config/motion";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,12 @@ type MotionRevealProps = HTMLMotionProps<"div"> & {
 };
 
 function MotionReveal({ className, children, delay = 0, ...props }: MotionRevealProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={cn(className)}>{children as React.ReactNode}</div>;
+  }
+
   return (
     <motion.div
       initial="hidden"

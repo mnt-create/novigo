@@ -1,26 +1,27 @@
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { createMetadata } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { AppProviders } from "@/providers/app-providers";
 
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export async function generateMetadata() {
-  const t = await getTranslations("Site");
-
   return createMetadata({
-    description: t("description"),
+    title: "Don't Start From Scratch. Start With Something Brilliant.",
+    description: siteConfig.description,
   });
 }
 
@@ -47,7 +48,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistSans.className} h-full antialiased`}
+      className={`${plusJakarta.variable} ${plusJakarta.className} h-full antialiased`}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <NextIntlClientProvider locale={locale} messages={messages}>
