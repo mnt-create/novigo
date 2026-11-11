@@ -20,7 +20,7 @@ function MotionReveal({ className, children, delay = 0, ...props }: MotionReveal
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, margin: "-40px", amount: 0.15 }}
       variants={fadeInUp}
       transition={{ delay }}
       className={cn(className)}

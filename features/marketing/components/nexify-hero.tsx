@@ -23,40 +23,20 @@ export function NexifyHero() {
 
       <Container size="wide" className="relative py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
-            className="text-[11px] font-semibold uppercase tracking-[0.28em] text-violet-700"
-          >
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-violet-700">
             {heroContent.eyebrow}
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: reduceMotion ? 0 : 0.05 }}
-            className="mt-5 text-balance text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
-          >
+          <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
             {heroContent.headlineLead}{" "}
             <span className={gradients.brand}>{heroContent.headlineHighlight}</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: reduceMotion ? 0 : 0.1 }}
-            className="mx-auto mt-5 max-w-2xl text-pretty text-base text-slate-600 sm:text-lg"
-          >
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-slate-600 sm:text-lg">
             {heroContent.supporting}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: reduceMotion ? 0 : 0.16 }}
-            className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
-          >
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               size="lg"
               className="h-11 rounded-xl bg-violet-700 px-5 text-white hover:bg-violet-800"
@@ -75,15 +55,15 @@ export function NexifyHero() {
             >
               <NavLink href={routes.howItWorks}>{heroContent.secondaryCta}</NavLink>
             </Button>
-          </motion.div>
+          </div>
 
           <p className="mt-5 text-sm font-medium text-slate-500">{heroContent.positioning}</p>
         </div>
 
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={reduceMotion ? false : { opacity: 0.72, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.2 }}
+          transition={{ duration: 0.45 }}
           className="mx-auto mt-14 grid max-w-6xl gap-4 md:grid-cols-3"
         >
           {heroContent.stages.map((stage, index) => {

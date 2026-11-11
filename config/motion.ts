@@ -13,7 +13,8 @@ export const motionEasings = {
 };
 
 export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  // Keep content readable before animation (no opacity:0 flash/hide).
+  hidden: { opacity: 1, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
