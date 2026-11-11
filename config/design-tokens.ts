@@ -1,11 +1,12 @@
 /**
- * NOVIGO Design System — single source of truth for tokens.
+ * Nexify Design System — single source of truth for tokens.
  * CSS variables are defined in app/globals.css; these are Tailwind class maps for components.
  */
 
 export const brand = {
-  name: "NOVIGO",
-  tagline: "Travel Smarter with AI",
+  name: "Nexify",
+  tagline: "Human Creativity. AI Intelligence.",
+  positioning: "Designed by Humans. Personalized by AI. Controlled by You.",
 } as const;
 
 export const typography = {
@@ -18,7 +19,8 @@ export const typography = {
   bodySm: "text-sm leading-relaxed",
   caption: "text-xs text-muted-foreground",
   label: "text-sm font-medium leading-none",
-  overline: "text-xs font-medium uppercase tracking-widest text-muted-foreground",
+  overline:
+    "text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground",
 } as const;
 
 export const spacing = {
@@ -40,8 +42,10 @@ export const radius = {
 
 export const shadows = {
   card: "shadow-sm ring-1 ring-foreground/10",
-  cardHover: "shadow-md ring-1 ring-foreground/10 transition-shadow hover:shadow-lg",
+  cardHover:
+    "shadow-md ring-1 ring-foreground/10 transition-shadow hover:shadow-lg",
   elevated: "shadow-lg shadow-black/5 dark:shadow-black/20",
+  glow: "shadow-[0_24px_80px_-28px_rgba(109,40,217,0.45)]",
   search: "shadow-xl shadow-primary/5 ring-1 ring-border/60",
 } as const;
 
@@ -49,7 +53,8 @@ export const surfaces = {
   page: "bg-background text-foreground",
   muted: "bg-muted/30",
   card: "bg-card text-card-foreground",
-  glass: "bg-background/80 backdrop-blur-md",
+  glass: "bg-background/75 backdrop-blur-xl",
+  navy: "bg-brand-navy text-white",
 } as const;
 
 export const layout = {
@@ -64,6 +69,14 @@ export const animation = {
   scaleIn: "animate-in fade-in-0 zoom-in-95 duration-200",
 } as const;
 
+export const gradients = {
+  brand:
+    "bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent",
+  surface:
+    "bg-[radial-gradient(ellipse_at_top,_rgba(124,58,237,0.18),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(34,211,238,0.12),_transparent_45%)]",
+  soft: "bg-gradient-to-br from-violet-50 via-white to-cyan-50",
+} as const;
+
 export const designTokens = {
   brand,
   typography,
@@ -73,6 +86,7 @@ export const designTokens = {
   surfaces,
   layout,
   animation,
+  gradients,
 } as const;
 
 export type TypographyToken = keyof typeof typography;

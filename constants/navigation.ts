@@ -1,65 +1,55 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  BedDouble,
-  Bus,
-  Car,
-  PartyPopper,
-  Plane,
-} from "lucide-react";
+import { LayoutTemplate, Palette, Sparkles, CreditCard } from "lucide-react";
 
 import { routes } from "@/constants/routes";
 
-export type NavItem = {
-  id: "accommodation" | "flights" | "carRental" | "transfer" | "events";
+export type MarketingNavItem = {
+  id: "templates" | "howItWorks" | "forDesigners" | "pricing";
   href: string;
   icon: LucideIcon;
-  active?: boolean;
-  phase?: 1 | 2;
 };
 
-export const mainNavItems: NavItem[] = [
-  { id: "accommodation", href: routes.search, icon: BedDouble, active: true, phase: 1 },
-  { id: "flights", href: routes.search, icon: Plane, phase: 2 },
-  { id: "carRental", href: routes.search, icon: Car, phase: 2 },
-  { id: "transfer", href: routes.search, icon: Bus, phase: 2 },
-  { id: "events", href: routes.search, icon: PartyPopper, phase: 2 },
+export const mainNavItems: MarketingNavItem[] = [
+  { id: "templates", href: routes.templates, icon: LayoutTemplate },
+  { id: "howItWorks", href: routes.howItWorks, icon: Sparkles },
+  { id: "forDesigners", href: routes.forDesigners, icon: Palette },
+  { id: "pricing", href: routes.pricing, icon: CreditCard },
 ];
 
+/** Footer links — only routes that exist in this app (no broken destinations). */
 export const footerColumnIds = {
+  product: {
+    id: "product",
+    links: [
+      { id: "templates", href: routes.templates },
+      { id: "howItWorks", href: routes.howItWorks },
+      { id: "aiAssistant", href: routes.ai },
+      { id: "pricing", href: routes.pricing },
+    ],
+  },
   explore: {
     id: "explore",
     links: [
+      { id: "forDesigners", href: routes.forDesigners },
       { id: "hotels", href: routes.hotels },
-      { id: "destinations", href: routes.destinations },
-      { id: "offers", href: routes.offers },
-      { id: "aiAssistant", href: routes.ai },
+      { id: "search", href: routes.search },
+      { id: "getStarted", href: routes.register },
     ],
   },
   company: {
     id: "company",
     links: [
-      { id: "about", href: routes.about },
-      { id: "careers", href: routes.about },
-      { id: "press", href: routes.about },
-      { id: "partners", href: routes.contact },
-    ],
-  },
-  support: {
-    id: "support",
-    links: [
-      { id: "helpCenter", href: routes.help },
-      { id: "contact", href: routes.contact },
+      { id: "signIn", href: routes.login },
+      { id: "signUp", href: routes.register },
+      { id: "profile", href: routes.profile },
       { id: "myBookings", href: routes.bookings },
-      { id: "faq", href: routes.help },
     ],
   },
   legal: {
     id: "legal",
     links: [
-      { id: "privacy", href: "/privacy" },
-      { id: "terms", href: "/terms" },
-      { id: "cookies", href: "/privacy" },
-      { id: "kvkk", href: "/privacy" },
+      { id: "privacy", href: routes.privacy },
+      { id: "terms", href: routes.terms },
     ],
   },
 } as const;

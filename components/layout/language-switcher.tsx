@@ -44,7 +44,7 @@ export function LanguageSwitcher({ variant = "header" }: LanguageSwitcherProps) 
           className={cn(
             isFooter
               ? "h-auto px-0 text-white/60 hover:bg-transparent hover:text-white"
-              : "text-white/90 hover:bg-white/10 hover:text-white",
+              : "text-slate-700 hover:bg-violet-50 hover:text-violet-800",
           )}
           aria-label={t("selectLanguage")}
         >

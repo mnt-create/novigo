@@ -1,5 +1,9 @@
 export const routes = {
   home: "/",
+  templates: "/templates",
+  pricing: "/pricing",
+  howItWorks: "/#how-it-works",
+  forDesigners: "/#designers",
   search: "/search",
   hotels: "/hotels",
   hotel: (slug: string) => `/hotels/${slug}`,
@@ -15,6 +19,8 @@ export const routes = {
   help: "/help",
   about: "/about",
   contact: "/contact",
+  privacy: "/privacy",
+  terms: "/terms",
   admin: "/admin",
   checkout: "/checkout",
   // Legacy aliases — remove after Sprint 5 auth migration
